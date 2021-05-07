@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Puzzle</title>
+
+    <!-- Include links to CSS stylesheets below -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+</head>
+<body>
+    <div id="root"></div>
+        
+    <!-- Include links to JavaScript files below -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="puzzle.js" type="module"></script>
+    <script src="render.js" type="module"></script>
+    
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyB0xRmdKR0UzGtNKDMrpmsLIbrAEmAwt_o",
+        authDomain: "jeff-final-project.firebaseapp.com",
+        projectId: "jeff-final-project",
+        storageBucket: "jeff-final-project.appspot.com",
+        messagingSenderId: "397645539651",
+        appId: "1:397645539651:web:d7d9521dd5947399f427f6",
+        measurementId: "G-2EZFT33B2W"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+</body>
+</html>
