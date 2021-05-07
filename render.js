@@ -19,7 +19,7 @@ import "./node_modules/firebase/firestore/";*/
 // Given a puzzle object, this function renders puzzle board
 let newPuzzle = new Puzzle(4);
 
-let imageType = "";
+let imageType = "cat";
 
 export const renderPuzzleBoard = function(puzzle) {
     // Code to put all tiles into the grid
@@ -33,52 +33,52 @@ export const renderPuzzleBoard = function(puzzle) {
     <h1 class="win">${puzzle.isWon()}</h1>
     <div style="width: 700px; margin: 0 auto;"class="grid-container">
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 0))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 0), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 1))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 1), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 2))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 2), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 3))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(0, 3), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 0))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 0), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 1))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 1), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 2))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 2), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 3))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(1, 3), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 0))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 0), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 1))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 1), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 2))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 2), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 3))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(2, 3), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 0))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 0), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 1))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 1), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 2))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 2), imageType)}"/>
         </div>
         <div class="grid-item image">
-            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 3))}"/>
+            <img src="${puzzle.tileImage(puzzle.tileNumber(3, 3), imageType)}"/>
         </div>
     </div>
     <h2 style="font-size: 30px; text-align: center;">Total Moves: ${puzzle.returnCount()}</h2>
@@ -135,16 +135,19 @@ export const handleSolveButtonPress = function (event) {
 
 export const handleCatButtonPress = function (event) {
     imageType = "cat";
+    newPuzzle.moveCount = 0;
     $(event.target.parentNode.parentNode).replaceWith(renderPuzzleBoard(newPuzzle));
 }
 
 export const handleCowButtonPress = function (event) {
     imageType = "cow";
+    newPuzzle.moveCount = 0;
     $(event.target.parentNode.parentNode).replaceWith(renderPuzzleBoard(newPuzzle));
 }
 
 export const handleDogButtonPress = function (event) {
     imageType = "dog";
+    newPuzzle.moveCount = 0;
     $(event.target.parentNode.parentNode).replaceWith(renderPuzzleBoard(newPuzzle));
 }
 

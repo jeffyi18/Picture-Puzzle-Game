@@ -22,9 +22,15 @@ export default class Puzzle {
 
     // Methods
 
-    tileImage(number) {
+    tileImage(number, animal) {
         if (number == 0) {
             return "https://www.godisinthetvzine.co.uk/wp-content/uploads/2020/06/IMG_20200602_120716_501.jpg";
+        } else if(animal == "cat") {
+            return "./images/american-shorthair-2 copy " + number +".jpeg";
+        } else if(animal == "cow") {
+            return "./images/cow-field-one-health-uc-davis copy " + number + ".jpeg";
+        } else if(animal == "dog") {
+            return "./images/dog copy " + number + ".jpeg";
         }
         return "./images/american-shorthair-2 copy " + number +".jpeg";
     }
