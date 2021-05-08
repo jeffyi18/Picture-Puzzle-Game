@@ -8,12 +8,70 @@
     <title>Puzzle</title>
 
     <!-- Include links to CSS stylesheets below -->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 <body>
     <div id="root"></div>
-        
+    <div style="text-align: center; font-size: 80px;">
+        <a style="text-align: center; margin: auto;" href="./twitter.html">Check Out How Bad Our Class is at Games</a>
+    </div>
+    <div style="text-align: center; font-size: 80px;">
+        <a style="text-align: center; margin: auto;" href="./time.html">I Wonder What Time It Is</a>
+    </div>
+    <div style="text-align: center; font-size: 80px;">
+        <a style="text-align: center; margin: auto;" href="./jokes.html">Like Jokes?</a>
+    </div>
+    <div style="text-align: center; font-size: 80px;">
+        <a style="text-align: center; margin: auto;" href="compliment.html">Like Compliments?</a>
+    </div>
+    <div style="text-align: center; font-size: 80px;">
+        <a style="text-align: center; margin: auto;" href="./advice.html">Like Advice?</a>
+    </div>
+
+    <br>
+    <br>
+    <div style="text-align: center; font-size: 80px;">
+        <h1>Help a Fellow College Student Out</h1>
+        <h1>Every Penny Counts!</h1>
+    </div>
+    <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        paypal.Buttons({
+          style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'paypal',
+            
+          },
+  
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+            });
+          },
+  
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+              alert('Transaction completed by ' + details.payer.name.given_name + '!');
+            });
+          },
+  
+          onError: function(err) {
+            console.log(err);
+          }
+        }).render('#paypal-button-container');
+      }
+      initPayPalButton();
+    </script>
+  
     <!-- Include links to JavaScript files below -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

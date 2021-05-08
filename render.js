@@ -24,7 +24,7 @@ let imageType = "cat";
 export const renderPuzzleBoard = function(puzzle) {
     // Code to put all tiles into the grid
     return `<div class="top-container">
-    <h1 style="font-size: 120px; text-align: center;">Put the Picture Back Together!</h1>
+    <h1 style="font-size: 120px; text-align: center;">Picture Puzzle!</h1>
     <div style="margin: auto; padding-bottom: 20px; text-align: center;">
         <button class="button cat-button" style="margin-left: 50px; margin-right: 50px; width: 100px;">Cat</button>
         <button class="button cow-button" style="margin-left: 50px; margin-right: 50px; width: 100px;">Cow</button>
@@ -82,13 +82,14 @@ export const renderPuzzleBoard = function(puzzle) {
         </div>
     </div>
     <h2 style="font-size: 30px; text-align: center;">Total Moves: ${puzzle.returnCount()}</h2>
-    <h2 style="font-size: 30px; text-align: center;">Time Elapsed: 100 ms</h2>
     <div style="margin: auto; padding-top: 10px; text-align: center;">
         <button class="button reset-button" style="margin: auto;">Reset</button>
         <button class="button solve-button" style="margin: auto;">Solve</button>
     </div>
-    <h2 style="font-size: 20px; text-align: center;">HOW TO PLAY: Use your arrow keys to move the tiles one by one in tandem with the empty spot on the board.</h2>
+    <h2 style="font-size: 20px; text-align: center;">HOW TO PLAY: Use your arrow keys to move the tiles one by one in relation to the black spot on the board.</h2>
     <h2 style="font-size: 20px; text-align: center;">Move the tiles to complete the picture!</h2>
+    <h2 style="font-size: 20px; text-align: center;">FUN FACT: If you click the "Cat" button 9,000,000,000 times, the solved puzzle will appear!</h2>
+    
     </div>`
 };
 
@@ -135,19 +136,19 @@ export const handleSolveButtonPress = function (event) {
 
 export const handleCatButtonPress = function (event) {
     imageType = "cat";
-    newPuzzle.moveCount = 0;
+    newPuzzle = new Puzzle(4);
     $(event.target.parentNode.parentNode).replaceWith(renderPuzzleBoard(newPuzzle));
 }
 
 export const handleCowButtonPress = function (event) {
     imageType = "cow";
-    newPuzzle.moveCount = 0;
+    newPuzzle = new Puzzle(4);
     $(event.target.parentNode.parentNode).replaceWith(renderPuzzleBoard(newPuzzle));
 }
 
 export const handleDogButtonPress = function (event) {
     imageType = "dog";
-    newPuzzle.moveCount = 0;
+    newPuzzle = new Puzzle(4);
     $(event.target.parentNode.parentNode).replaceWith(renderPuzzleBoard(newPuzzle));
 }
 
