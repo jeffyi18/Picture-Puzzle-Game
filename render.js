@@ -159,6 +159,10 @@ export const loadPuzzleIntoDOM = function (puzzle) {
     const $root = $('#root');
     $root.append(renderPuzzleBoard(puzzle))
 
+    $root.append(`<div style="text-align: center; font-size: 100px;">
+        <a href="./index.html">Back to Main</a>
+    </div>`)
+
     document.addEventListener("keydown", handleArrowKey);
     $root.on("click", ".reset-button", handleResetButtonPress);
     $root.on("click", ".solve-button", handleSolveButtonPress);
@@ -175,17 +179,3 @@ export const loadPuzzleIntoDOM = function (puzzle) {
     loadPuzzleIntoDOM(newPuzzle);
 });
 
-// TODO: Replace the following with your app's Firebase project configuration
-// For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-const firebaseConfig = {
-    apiKey: "AIzaSyB0xRmdKR0UzGtNKDMrpmsLIbrAEmAwt_o",
-    authDomain: "jeff-final-project.firebaseapp.com",
-    projectId: "jeff-final-project",
-    storageBucket: "jeff-final-project.appspot.com",
-    messagingSenderId: "397645539651",
-    appId: "1:397645539651:web:d7d9521dd5947399f427f6",
-    measurementId: "G-2EZFT33B2W"
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
