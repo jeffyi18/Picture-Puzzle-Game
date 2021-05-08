@@ -2,7 +2,7 @@
  * This javascript page uses jquery to load a puzzle gameboard into a web page
  */
 
-import Puzzle from "./Puzzle.js"
+import Puzzle from "./puzzle.js"
 /*
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import firebase from "./node_modules/firebase/app/";
