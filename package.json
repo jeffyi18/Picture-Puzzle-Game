@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "console": "node run_in_console.js"
+    "console": "node run_in_console.js",
+    "start": "node index.html"
   },
   "author": "",
   "license": "ISC",
