@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "console": "node run_in_console.js",
-    "start": "node index.html"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
